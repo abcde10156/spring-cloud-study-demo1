@@ -27,6 +27,10 @@ public class StartupWebClient extends SpringBootServletInitializer {
     @LoadBalanced
     @Bean
     RestTemplate restTemplate() {
+//        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
+//        simpleClientHttpRequestFactory.setConnectTimeout(1000);
+//        simpleClientHttpRequestFactory.setReadTimeout(1000);
+//        return new RestTemplate(simpleClientHttpRequestFactory);
         return new RestTemplate();
     }
 

@@ -1,6 +1,5 @@
 package com.luotao.demo.sc.serviceuser;
 
-import com.luotao.demo.sc.BusiException;
 import com.luotao.demo.sc.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +27,11 @@ public class UserController {
     public User dc() {
 
         logger.info("username");
+        try {
+            Thread.currentThread().sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = new User();
         user.setUsername("zhangsan");
         user.setPassword("12345678");

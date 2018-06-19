@@ -29,6 +29,7 @@ import java.util.List;
 @EnableFeignClients
 public class WebApiConfiguration extends WebMvcConfigurerAdapter {
 
+
     @Bean
     TraceFilter myTraceFilter(BeanFactory beanFactory, final Tracer tracer) {
         return new TraceFilter(beanFactory) {
@@ -46,6 +47,7 @@ public class WebApiConfiguration extends WebMvcConfigurerAdapter {
             }
         };
     }
+
 
     @Bean
     public JsonHttpMessageConverter messageConverter() {
