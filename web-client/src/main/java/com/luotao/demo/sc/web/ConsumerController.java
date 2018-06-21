@@ -40,7 +40,7 @@ public class ConsumerController {
         requestIds.setId(id);
         Object clipDetail = clipService.detailById(requestIds);
 
-        String result = restTemplate.getForEntity("http://user-service/userlist", String.class).getBody();
+        String result = restTemplate.getForEntity("http://core-user/userlist", String.class).getBody();
         logger.info("result : " + result);
 
         return clipDetail;
