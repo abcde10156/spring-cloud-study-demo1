@@ -1,7 +1,6 @@
 package com.luotao.demo.sc.common;
 
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +29,7 @@ public class ExceptionUtils {
                 logger.error(stackTraceElement.toString());
             }
         } else if (errorStackDeep > 0) {
-            for (int i = 0; i < errorStackDeep; i++) {
+            for (int i = 0; i < errorStackDeep && i < stackTraceElements.length; i++) {
                 logger.error(stackTraceElements[i].toString());
             }
         }
@@ -43,16 +42,15 @@ public class ExceptionUtils {
         throw exception;
     }
 
-    public static void  throwEx(RuntimeException e) {
+    public static void throwEx(RuntimeException e) {
         ExceptionUtils.printException(e);
         throw e;
     }
 
-    public static RuntimeException makeException(Exception e){
-        if(e instanceof RuntimeException){
+    public static RuntimeException makeException(Exception e) {
+        if (e instanceof RuntimeException) {
             return (RuntimeException) e;
-        }
-        else {
+        } else {
             return new RuntimeException(e.getMessage());
         }
     }

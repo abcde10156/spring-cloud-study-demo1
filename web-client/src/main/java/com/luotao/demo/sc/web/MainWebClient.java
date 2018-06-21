@@ -1,5 +1,7 @@
 package com.luotao.demo.sc.web;
 
+import com.luotao.demo.sc.common.config.spring.WebConfiguration;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -17,10 +19,11 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class StartupWebClient extends SpringBootServletInitializer {
+@ImportAutoConfiguration(classes = WebConfiguration.class)
+public class MainWebClient extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(StartupWebClient.class);
+        return builder.sources(MainWebClient.class);
     }
 
 
@@ -35,6 +38,6 @@ public class StartupWebClient extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(StartupWebClient.class).web(true).run(args);
+        new SpringApplicationBuilder(MainWebClient.class).web(true).run(args);
     }
 }

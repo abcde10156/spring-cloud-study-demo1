@@ -1,5 +1,8 @@
 package com.luotao.demo.sc.core.res;
 
+
+import com.luotao.demo.sc.common.config.spring.WebConfiguration;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -11,9 +14,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-
-public class MainCoreRes {
+@ImportAutoConfiguration(classes = WebConfiguration.class)
+public class MainCoreCompany {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(MainCoreRes.class).web(true).run(args);
+        new SpringApplicationBuilder(MainCoreCompany.class).web(true).run(args);
     }
 }

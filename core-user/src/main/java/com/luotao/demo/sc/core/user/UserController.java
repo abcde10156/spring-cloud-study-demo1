@@ -1,5 +1,6 @@
 package com.luotao.demo.sc.core.user;
 
+import com.luotao.demo.sc.common.CommonException;
 import com.luotao.demo.sc.common.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,9 @@ public class UserController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+        if (userid == 102) {
+            throw CommonException.illegalInput;
         }
 
         User user = new User();

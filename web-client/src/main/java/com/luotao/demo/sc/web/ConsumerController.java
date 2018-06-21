@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+
 /**
  * User: luotao-pc
  * Date: 2018/6/15
@@ -22,7 +24,7 @@ public class ConsumerController {
 
 
     @Autowired
-    ClipServiceClient clipService;
+    CompanyServiceClient companyServiceClient;
 
     @Autowired
     RestTemplate restTemplate;
@@ -30,17 +32,17 @@ public class ConsumerController {
     @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.GET)
     public Object helloController(@RequestParam(name = "id") Long id) {
         logger.info(ConsumerController.class.getName());
-        logger.info("clipService : " + clipService);
+        logger.info("companyServiceClient : " + companyServiceClient);
 
 
 //        ResponseClipDetail byId = clipService.findById(110L);
 //        logger.info("clipDetail1 : " + byId.getId());
 
         RequestIds requestIds = new RequestIds();
-        requestIds.setId(id);
-        Object clipDetail = clipService.detailById(requestIds);
-
-        String result = restTemplate.getForEntity("http://core-user/userlist", String.class).getBody();
+        requestIds.setId(Arrays.asList(id, 9999L));
+        Object clipDetail = companyServiceClient.findDetailByIds(requestIds);
+        logger.info("clipDetail : " + clipDetail);
+        String result = restTemplate.getForEntity("http://core-user/userlist?userid=" + id, String.class).getBody();
         logger.info("result : " + result);
 
         return clipDetail;
