@@ -1,7 +1,7 @@
 package com.luotao.demo.sc.hystrix;
 
-import com.luotao.demo.sc.HttpUtils;
-import com.luotao.demo.sc.TesterConcurrent;
+import com.luotao.demo.sc.common.HttpUtils;
+import com.luotao.demo.sc.common.TesterConcurrent;
 
 /**
  * @author luotao-work

@@ -1,6 +1,6 @@
 package com.luotao.demo.sc.web;
 
-import com.luotao.demo.sc.request.RequestIds;
+import com.luotao.demo.sc.common.request.RequestIds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

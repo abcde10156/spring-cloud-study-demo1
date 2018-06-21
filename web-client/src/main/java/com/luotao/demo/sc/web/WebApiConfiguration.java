@@ -1,6 +1,6 @@
 package com.luotao.demo.sc.web;
 
-import com.luotao.demo.sc.ResponseCommon;
+import com.luotao.demo.sc.common.ResponseCommon;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;

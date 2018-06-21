@@ -1,6 +1,6 @@
 package com.luotao.demo.sc.web;
 
-import com.luotao.demo.sc.service.ClipService;
+import com.luotao.demo.sc.common.service.ClipService;
 import org.springframework.cloud.netflix.feign.FeignClient;
 
 /**
