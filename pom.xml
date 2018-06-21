@@ -12,7 +12,7 @@
         <module>common</module>
         <module>helper-eureka</module>
         <module>helper-zipkin</module>
-        <module>core-res</module>
+        <module>core-company</module>
         <module>core-user</module>
         <module>server-order</module>
         <module>web-client</module>
