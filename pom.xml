@@ -5,11 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.luotao.demo.sc</groupId>
-    <artifactId>all</artifactId>
+    <artifactId>spring-cloud-study-demo1</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>common</module>
         <module>config-server</module>
+        <module>zipkin-server</module>
         <module>core-res</module>
         <module>core-user</module>
         <module>web-client</module>
