@@ -21,6 +21,7 @@
         <swagger.version>2.6.0</swagger.version>
         <spring.cloud.version>Finchley.RELEASE</spring.cloud.version>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
