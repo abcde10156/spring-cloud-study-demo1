@@ -16,7 +16,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.luota.demo.sc</groupId>
+            <groupId>com.luotao.demo.sc</groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
