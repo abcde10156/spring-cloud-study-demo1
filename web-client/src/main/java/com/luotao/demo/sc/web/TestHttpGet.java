@@ -1,4 +1,4 @@
-package com.luotao.demo.sc.hystrix;
+package com.luotao.demo.sc.web;
 
 import com.luotao.demo.sc.common.HttpUtils;
 import com.luotao.demo.sc.common.TesterConcurrent;
@@ -10,7 +10,7 @@ import com.luotao.demo.sc.common.TesterConcurrent;
 public class TestHttpGet {
     public static void main(String[] args) throws Exception {
 
-        final String url = "http://127.0.0.1:3002/index?id=101";
+        final String url = "http://127.0.0.1:3001/ribbon-consumer?id=100";
 
         TesterConcurrent.runLoopInner(10, new TesterConcurrent.ITestable() {
             @Override

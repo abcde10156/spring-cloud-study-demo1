@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * Date: 2018/6/15
  * Time: 22:36
  */
-@FeignClient(value = "core-company")
+@FeignClient(value = "core-company", fallback = CompanyServiceClientImpl.class)
 interface CompanyServiceClient extends CompanyService {
 
 }
