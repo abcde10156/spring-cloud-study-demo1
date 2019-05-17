@@ -1,8 +1,12 @@
 package com.luotao.demo.sc.hystrix;
 
+//import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.server.*;
 
 /**
@@ -11,6 +15,24 @@ import org.springframework.web.reactive.function.server.*;
  */
 @Configuration
 public class Router {
+
+
+    @Bean
+    @LoadBalanced
+    public WebClient.Builder loadBalancedWebClientBuilder() {
+        return WebClient.builder();
+    }
+
+    @LoadBalanced
+    @Bean
+    RestTemplate restTemplate() {
+//        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
+//        simpleClientHttpRequestFactory.setConnectTimeout(1000);
+//        simpleClientHttpRequestFactory.setReadTimeout(1000);
+//        return new RestTemplate(simpleClientHttpRequestFactory);
+        return new RestTemplate();
+    }
+
     @Bean
     public RouterFunction<ServerResponse> routeCity(HomeHandler indexHandler) {
 
@@ -19,7 +41,7 @@ public class Router {
 
         return RouterFunctions
                 .route(RequestPredicates.GET("/index").and(accept), indexHandler::index)
-                .andRoute(RequestPredicates.GET("/findUser").and(accept), indexHandler::list_res)
+                .andRoute(RequestPredicates.GET("/list_res").and(accept), indexHandler::list_res)
                 ;
 
     }
